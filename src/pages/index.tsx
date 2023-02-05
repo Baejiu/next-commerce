@@ -6,7 +6,7 @@ export default function Home() {
   // const [products, setProducts] = useState<
   //   { id: string; properties: { id: string }[] }[]
   // >([])
-  const [products, setProducts] = useState<{ id: string; name: string }[]>([])
+  const [products, setProducts] = useState<{ id: string; name: string; createAt: string }[]>([])
   const inputRef = useRef<HTMLInputElement>(null)
   const handleClick = () => {
     if (inputRef.current == null || inputRef.current.value === '') {
@@ -67,7 +67,7 @@ export default function Home() {
               </div>
             ))} */}
           {products &&
-            products.map((item) => <div key={item.id}>{item.name}</div>)}
+            products.map((item) => <div key={item.id}>{item.name}<span>{item.createAt}</span></div>)}
         </div>
       </main>
     </>
