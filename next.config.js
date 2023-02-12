@@ -7,10 +7,22 @@ const nextConfig = {
         protocol: 'https',
         hostname: 'picsum.photos',
         port: '',
-        pathname: '/id/**',
+        pathname: '/id/**'
       },
-    ],
-  },
+      {
+        protocol: 'https',
+        hostname: 'raw.githubusercontent.com',
+        port: '',
+        pathname: '/xiaolin/react-image-gallery/master/static/**'
+      },
+      {
+        protocol: 'http',
+        hostname: 'via.placeholder.com',
+        port: '',
+        pathname: '/**'
+      }
+    ]
+  }
 }
 
 module.exports = nextConfig

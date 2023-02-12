@@ -1,11 +1,12 @@
-import React from 'react'
+import React, { ReactNode } from 'react'
 
-interface Props {}
+interface Props {
+  children: ReactNode
+  onClick?: () => void
+}
 
-function Button(props: Props) {
-  const {} = props
-
-  return <button>Button</button>
+function Button({ children, onClick }: Props) {
+  return <button onClick={onClick}>{children}</button>
 }
 
 export default Button
