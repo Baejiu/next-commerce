@@ -9,8 +9,10 @@ import { CATEGORY_MAP, FILTERS, TAKE } from '@/constants/products'
 import { IconSearch } from '@tabler/icons-react'
 import useDebounce from '@/common/hooks/useDebounce'
 import { useQuery } from '@tanstack/react-query'
+import { useRouter } from 'next/router'
 
 export default function Products() {
+  const router = useRouter()
   const [activePage, setPage] = useState(1)
   const [selectedCategory, setSelectedCategory] = useState<string>('-1')
   const [selectedFilter, setSelectedFilter] = useState<string | null>(
@@ -97,7 +99,10 @@ export default function Products() {
       <List>
         {products &&
           products.map((item) => (
-            <ListItem key={item.id}>
+            <ListItem
+              key={item.id}
+              onClick={() => router.push(`/products/${item.id}`)}
+            >
               <Image
                 src={item.image_url ?? ''}
                 width={320}
